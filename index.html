@@ -695,33 +695,141 @@
     /* ═══════════════════════════════════════
        RESPONSIVE
     ═══════════════════════════════════════ */
+
+    /* ── Tablet ── */
     @media (max-width: 1024px) {
       .services__grid { grid-template-columns: repeat(2, 1fr); }
       .footer__top { grid-template-columns: 1fr 1fr; }
+      .about__inner { gap: 3rem; }
     }
+
+    /* ── Mobile landscape / large phone ── */
     @media (max-width: 900px) {
-      .nav { padding: 1.5rem 2rem; }
+      /* Nav */
+      .nav { padding: 1.2rem 1.5rem; }
+      .nav__logo { font-size: 1rem; }
+      .nav__logo-icon { width: 32px; height: 32px; font-size: 0.95rem; }
       .nav__links, .nav__cta { display: none; }
       .nav-toggle { display: flex; }
-      .hero__content { padding: 0 2rem; padding-top: 8rem; padding-bottom: 2rem; }
+
+      /* Hero */
+      .hero__content {
+        padding: 0 1.5rem;
+        padding-top: 7rem;
+        padding-bottom: 2rem;
+      }
       .hero__stats { position: static; }
-      .about__inner { grid-template-columns: 1fr; gap: 3rem; }
-      .contact__inner { grid-template-columns: 1fr; }
+      .hero__actions { flex-direction: column; }
+      .hero__actions a { text-align: center; justify-content: center; }
+
+      /* Sections */
+      .section { padding: 4rem 0; }
+
+      /* About */
+      .about__inner { grid-template-columns: 1fr; gap: 2.5rem; }
+      .about__photo { height: 320px; }
+      .about__badge { bottom: -1rem; right: 0.5rem; padding: 1rem; }
+      .about__badge-number { font-size: 2rem; }
+
+      /* Process */
+      .process__steps { flex-direction: column; align-items: center; }
+      .process__connector {
+        width: 2px; height: 36px;
+        background: linear-gradient(180deg, var(--accent), transparent);
+        margin: 0;
+      }
+      .process__step { max-width: 320px; width: 100%; }
+
+      /* Grids → single column */
       .areas__grid { grid-template-columns: 1fr; }
       .reviews__grid { grid-template-columns: 1fr; }
-      .process__steps { flex-direction: column; align-items: center; }
-      .process__connector { width: 2px; height: 40px; background: linear-gradient(180deg, var(--accent), transparent); margin: 0; }
+
+      /* Reviews header */
+      .reviews__header { flex-direction: column; align-items: flex-start; gap: 1rem; }
+
+      /* Trust bar */
+      .trust-bar__inner {
+        gap: 1.2rem;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        padding: 0 1rem;
+      }
+
+      /* Footer */
+      .footer__top { grid-template-columns: 1fr 1fr; gap: 2rem; }
+
+      /* Chatbot */
       #chatbotBox { width: calc(100vw - 2rem); right: 1rem; }
     }
+
+    /* ── Mobile portrait ── */
     @media (max-width: 600px) {
-      .services__grid { grid-template-columns: 1fr; }
-      .form-row { grid-template-columns: 1fr; }
-      .footer__top { grid-template-columns: 1fr; }
-      .trust-bar__inner { gap: 1.5rem; }
+      /* Base */
+      .container { padding: 0 1.25rem; }
+
+      /* Nav */
+      .nav { padding: 1rem 1.25rem; }
+      .nav__logo-icon { display: none; }
+
+      /* Hero */
+      .hero__content { padding: 0 1.25rem; padding-top: 6.5rem; padding-bottom: 1.5rem; }
+      .hero__badge { font-size: 0.68rem; padding: 0.4rem 0.9rem; }
+      .hero__heading { font-size: clamp(2rem, 8vw, 2.8rem); }
+      .hero__sub { font-size: 0.92rem; }
+      .btn-primary, .btn-ghost { width: 100%; justify-content: center; text-align: center; }
+
+      /* Stats strip */
       .hero__stats { flex-direction: column; }
-      .hero__stat { border-right: none; border-bottom: 1px solid var(--glass-border); max-width: 100%; }
+      .hero__stat {
+        border-right: none;
+        border-bottom: 1px solid var(--glass-border);
+        max-width: 100%;
+        padding: 1.1rem 1.5rem;
+      }
       .hero__stat:last-child { border-bottom: none; }
-      .reviews__header { flex-direction: column; align-items: flex-start; }
+
+      /* Seasonal banner */
+      .seasonal-banner { font-size: 0.82rem; padding: 0.8rem 1rem; }
+      .seasonal-banner a { display: block; margin: 0.4rem 0 0; }
+
+      /* Trust bar */
+      .trust-bar__inner { gap: 1rem; }
+      .trust-item { font-size: 0.8rem; }
+
+      /* Sections */
+      .section { padding: 3.5rem 0; }
+      .section__header { margin-bottom: 2.5rem; }
+
+      /* Services */
+      .services__grid { grid-template-columns: 1fr; }
+      .service-card { padding: 2rem 1.5rem; }
+
+      /* About */
+      .about__photo { height: 260px; }
+      .about__badge { position: static; margin-top: 1.2rem; display: inline-flex; gap: 0.5rem; align-items: center; border-radius: var(--radius); }
+      .about__badge-number { font-size: 1.6rem; }
+      .about__badge-text { font-size: 0.8rem; }
+
+      /* Process */
+      .process__step { padding: 0 0.5rem; }
+
+      /* Footer */
+      .footer__top { grid-template-columns: 1fr; gap: 2rem; padding: 2.5rem 0 2rem; }
+      .footer__bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
+
+      /* Chatbot */
+      #chatbotToggle { bottom: 1.2rem; right: 1.2rem; width: 52px; height: 52px; }
+      #chatbotBox { bottom: 5.5rem; }
+
+      /* CTA banner section */
+      .cta-actions { flex-direction: column !important; }
+      .cta-actions a { width: 100%; justify-content: center; }
+    }
+
+    /* ── Very small phones ── */
+    @media (max-width: 380px) {
+      .hero__heading { font-size: clamp(1.75rem, 7.5vw, 2rem); }
+      .hero__badge { display: none; }
     }
   </style>
 </head>
@@ -1189,7 +1297,7 @@
     <p class="section__eyebrow">Ready to Get Started?</p>
     <h2 class="section__title" style="margin-bottom:1rem">Get your free pool care estimate today.</h2>
     <p style="color:rgba(255,255,255,0.6);max-width:480px;margin:0 auto 2.5rem;line-height:1.75">We respond the same day. No commitment, no pressure — just an honest quote for your pool.</p>
-    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+    <div class="cta-actions" style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
       <a href="contact.html" class="btn-primary" style="font-size:1rem;padding:1rem 2.5rem">Book a Free Estimate →</a>
       <a href="tel:5147810556" class="btn-ghost" style="font-size:1rem;padding:1rem 2.5rem">📞 (514) 781-0556</a>
     </div>
