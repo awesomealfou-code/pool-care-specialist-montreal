@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>history.scrollRestoration='manual';window.scrollTo(0,0);</script>
+  <title>Contact & Book a Service | Pool Care Specialist Montreal</title>
+  <meta name="description" content="Book a pool cleaning, opening, closing or free estimate in Montreal & West Island. Call (514) 781-0556 or fill out the form — we respond same day." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --deep:         #071525;
+      --ocean:        #0d2137;
+      --mid:          #0f3460;
+      --accent:       #00b4d8;
+      --accent-glow:  rgba(0,180,216,0.3);
+      --white:        #ffffff;
+      --glass-bg:     rgba(255,255,255,0.07);
+      --glass-border: rgba(255,255,255,0.16);
+      --font-display: 'Playfair Display', serif;
+      --font-body:    'Inter', sans-serif;
+      --radius:       10px;
+    }
+
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-body); color: var(--white); background: var(--deep); overflow-x: hidden; }
+    a { text-decoration: none; color: inherit; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+
+    /* ── HEADER ── */
+    .header {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(7,21,37,0.96);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(0,180,216,0.1);
+    }
+    .header__inner {
+      display: flex; align-items: center;
+      justify-content: space-between;
+      padding: 1.2rem 2rem;
+    }
+    .header__logo {
+      font-family: var(--font-display);
+      font-size: 1.15rem; font-weight: 700;
+      color: var(--white); display: flex;
+      align-items: center; gap: 0.65rem;
+    }
+    .header__logo-icon {
+      width: 34px; height: 34px;
+      background: var(--accent); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem; flex-shrink: 0;
+    }
+    .nav__links { display: flex; gap: 2rem; list-style: none; }
+    .nav__links a {
+      font-size: 0.88rem; font-weight: 500;
+      color: rgba(255,255,255,0.75);
+      letter-spacing: 0.03em; transition: color 0.2s;
+    }
+    .nav__links a:hover { color: var(--accent); }
+    .nav__links a.active { color: var(--accent); }
+    .header__cta {
+      background: var(--accent); color: var(--deep);
+      font-weight: 700; font-size: 0.85rem;
+      padding: 0.6rem 1.4rem; border-radius: 4px;
+      letter-spacing: 0.04em; transition: opacity 0.2s;
+    }
+    .header__cta:hover { opacity: 0.88; }
+    .nav-toggle {
+      display: none; background: none; border: none;
+      cursor: pointer; flex-direction: column; gap: 5px; padding: 0.3rem;
+    }
+    .nav-toggle span { display: block; width: 24px; height: 2px; background: var(--white); border-radius: 2px; }
+
+    /* ── MOBILE MENU ── */
+    #mobileMenu {
+      display: none; position: fixed; inset: 0; z-index: 200;
+      background: var(--deep); flex-direction: column;
+      align-items: center; justify-content: center; gap: 2.5rem;
+    }
+    #mobileMenu.open { display: flex; }
+    #mobileMenu a { font-size: 1.4rem; font-weight: 600; color: var(--white); transition: color 0.2s; }
+    #mobileMenu a:hover { color: var(--accent); }
+    .mobile-close { position: absolute; top: 1.5rem; right: 2rem; font-size: 1.5rem; background: none; border: none; cursor: pointer; color: var(--white); }
+
+    /* ── PAGE HERO ── */
+    .page-hero {
+      background: linear-gradient(135deg, var(--ocean) 0%, #0a1e32 100%);
+      border-bottom: 1px solid rgba(0,180,216,0.1);
+      padding: 5rem 0 4rem;
+      text-align: center; position: relative; overflow: hidden;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute; top: -100px; right: -100px;
+      width: 500px; height: 500px;
+      border-radius: 50%;
+      border: 1px solid rgba(0,180,216,0.08);
+      pointer-events: none;
+    }
+    .page-hero::after {
+      content: '';
+      position: absolute; bottom: -80px; left: -80px;
+      width: 320px; height: 320px;
+      border-radius: 50%;
+      border: 1px solid rgba(0,180,216,0.06);
+      pointer-events: none;
+    }
+    .page-hero__eyebrow {
+      font-size: 0.75rem; font-weight: 700;
+      letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 0.8rem;
+    }
+    .page-hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      font-weight: 900; color: var(--white);
+      line-height: 1.1; margin-bottom: 1rem;
+    }
+    .page-hero h1 span { color: var(--accent); font-style: italic; }
+    .page-hero p {
+      font-size: 1rem; color: rgba(255,255,255,0.6);
+      max-width: 480px; margin: 0 auto; line-height: 1.75;
+    }
+
+    /* ── MAIN LAYOUT ── */
+    .contact-page {
+      padding: 5rem 0 6rem;
+    }
+    .contact-page__inner {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 4rem; align-items: start;
+    }
+
+    /* ── INFO COLUMN ── */
+    .contact-info__heading {
+      font-family: var(--font-display);
+      font-size: 1.5rem; font-weight: 700;
+      color: var(--white); margin-bottom: 0.75rem;
+    }
+    .contact-info__sub {
+      font-size: 0.92rem; color: rgba(255,255,255,0.55);
+      line-height: 1.75; margin-bottom: 2.5rem;
+    }
+    .contact-details { display: flex; flex-direction: column; gap: 1.5rem; margin-bottom: 3rem; }
+    .contact-detail { display: flex; align-items: flex-start; gap: 1rem; }
+    .contact-detail__icon {
+      width: 44px; height: 44px; flex-shrink: 0;
+      background: rgba(0,180,216,0.1);
+      border: 1px solid rgba(0,180,216,0.25);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      margin-top: 2px;
+    }
+    .contact-detail__icon svg { color: var(--accent); }
+    .contact-detail strong {
+      display: block; font-size: 0.95rem;
+      color: var(--white); margin-bottom: 0.2rem;
+    }
+    .contact-detail span { font-size: 0.84rem; color: rgba(255,255,255,0.48); }
+    .contact-detail a { color: rgba(255,255,255,0.48); transition: color 0.2s; }
+    .contact-detail a:hover { color: var(--accent); }
+
+    /* Response time badge */
+    .response-badge {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: rgba(0,180,216,0.08);
+      border: 1px solid rgba(0,180,216,0.2);
+      border-radius: 100px; padding: 0.55rem 1.1rem;
+      font-size: 0.82rem; font-weight: 600;
+      color: var(--accent); margin-bottom: 2.5rem;
+    }
+    .response-badge::before {
+      content: ''; width: 8px; height: 8px;
+      background: #22c55e; border-radius: 50;
+      border-radius: 50%;
+      box-shadow: 0 0 0 3px rgba(34,197,94,0.2);
+      animation: pulse-green 2s infinite;
+    }
+    @keyframes pulse-green {
+      0%, 100% { box-shadow: 0 0 0 3px rgba(34,197,94,0.2); }
+      50% { box-shadow: 0 0 0 6px rgba(34,197,94,0.05); }
+    }
+
+    /* Services quick list */
+    .services-list { display: flex; flex-direction: column; gap: 0.6rem; }
+    .services-list__label {
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--accent); margin-bottom: 0.5rem;
+    }
+    .service-pill {
+      display: flex; align-items: center; gap: 0.6rem;
+      font-size: 0.88rem; color: rgba(255,255,255,0.65);
+    }
+    .service-pill::before {
+      content: ''; width: 5px; height: 5px;
+      background: var(--accent); border-radius: 50%; flex-shrink: 0;
+    }
+
+    /* ── FORM COLUMN ── */
+    .contact-form-card {
+      background: var(--ocean);
+      border: 1px solid rgba(0,180,216,0.14);
+      border-radius: var(--radius);
+      padding: 3rem;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.3);
+    }
+    .contact-form-card h2 {
+      font-family: var(--font-display);
+      font-size: 1.6rem; font-weight: 700;
+      color: var(--white); margin-bottom: 0.4rem;
+    }
+    .contact-form-card > p {
+      font-size: 0.88rem; color: rgba(255,255,255,0.48);
+      margin-bottom: 2rem;
+    }
+    .form-group { margin-bottom: 1.2rem; }
+    .form-group label {
+      display: block; font-size: 0.72rem; font-weight: 700;
+      color: var(--accent); letter-spacing: 0.1em;
+      text-transform: uppercase; margin-bottom: 0.45rem;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 6px; color: var(--white);
+      font-family: var(--font-body); font-size: 0.9rem;
+      padding: 0.85rem 1rem; outline: none;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--accent);
+      background: rgba(0,180,216,0.06);
+    }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder { color: rgba(255,255,255,0.3); }
+    .form-group select option { background: #0d2137; color: var(--white); }
+    .form-group textarea { resize: vertical; min-height: 110px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .form-submit {
+      width: 100%; background: var(--accent); color: var(--deep);
+      font-family: var(--font-body);
+      font-weight: 700; font-size: 1rem; padding: 1.1rem;
+      border: none; border-radius: 6px; cursor: pointer;
+      letter-spacing: 0.05em; margin-top: 0.8rem;
+      transition: opacity 0.2s, transform 0.2s;
+    }
+    .form-submit:hover { opacity: 0.9; transform: translateY(-1px); }
+    #formSuccess {
+      display: none; text-align: center; padding: 3rem 1rem;
+    }
+    #formSuccess .success-icon { font-size: 3rem; margin-bottom: 1rem; }
+    #formSuccess h3 { font-family: var(--font-display); font-size: 1.5rem; color: var(--white); margin-bottom: 0.5rem; }
+    #formSuccess p { font-size: 0.92rem; color: rgba(255,255,255,0.55); line-height: 1.7; }
+
+    /* ── FOOTER ── */
+    .footer { background: #040e1a; border-top: 1px solid rgba(0,180,216,0.1); }
+    .footer__top {
+      display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr;
+      gap: 3rem; padding: 4rem 0 3rem;
+    }
+    .footer__logo-name { font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; color: var(--white); }
+    .footer__logo-name span { color: var(--accent); }
+    .footer__brand p { font-size: 0.88rem; color: rgba(255,255,255,0.48); line-height: 1.7; margin-top: 1rem; max-width: 260px; }
+    .footer__links h4, .footer__contact h4 { font-size: 0.76rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.2rem; }
+    .footer__links ul { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+    .footer__links ul li a { font-size: 0.88rem; color: rgba(255,255,255,0.52); transition: color 0.2s; }
+    .footer__links ul li a:hover { color: var(--accent); }
+    .footer__contact p { font-size: 0.88rem; color: rgba(255,255,255,0.52); line-height: 1.8; }
+    .footer__contact a { color: rgba(255,255,255,0.52); transition: color 0.2s; }
+    .footer__contact a:hover { color: var(--accent); }
+    .footer__bottom { border-top: 1px solid rgba(255,255,255,0.05); padding: 1.5rem 0; display: flex; justify-content: space-between; align-items: center; }
+    .footer__bottom p { font-size: 0.82rem; color: rgba(255,255,255,0.32); }
+
+    /* ── CHATBOT ── */
+    #chatbotToggle {
+      position: fixed; bottom: 2rem; right: 2rem;
+      width: 58px; height: 58px;
+      background: var(--accent); border: none; border-radius: 50%;
+      cursor: pointer; font-size: 1.4rem; z-index: 999;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 24px var(--accent-glow);
+      transition: transform 0.2s;
+    }
+    #chatbotToggle:hover { transform: scale(1.08); }
+    #chatbotBox {
+      position: fixed; bottom: 6.5rem; right: 2rem;
+      width: 360px;
+      background: var(--ocean);
+      border: 1px solid rgba(0,180,216,0.22);
+      border-radius: 16px; overflow: hidden;
+      display: none; flex-direction: column; z-index: 999;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.5);
+    }
+    #chatbotBox.open { display: flex; }
+    .chatbot__header { background: var(--accent); color: var(--deep); padding: 1rem 1.2rem; display: flex; align-items: center; gap: 0.8rem; font-weight: 700; }
+    .chatbot__avatar { width: 36px; height: 36px; background: var(--deep); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; }
+    .chatbot__messages { padding: 1.2rem; display: flex; flex-direction: column; gap: 0.8rem; max-height: 260px; overflow-y: auto; flex: 1; }
+    .msg { display: flex; flex-direction: column; }
+    .msg--bot .msg__bubble { background: rgba(0,180,216,0.1); border: 1px solid rgba(0,180,216,0.18); color: var(--white); border-radius: 12px 12px 12px 0; padding: 0.7rem 1rem; font-size: 0.88rem; line-height: 1.55; max-width: 85%; }
+    .msg--user { align-items: flex-end; }
+    .msg--user .msg__bubble { background: var(--accent); color: var(--deep); border-radius: 12px 12px 0 12px; padding: 0.7rem 1rem; font-size: 0.88rem; font-weight: 600; max-width: 85%; }
+    .chatbot__input-area { display: flex; border-top: 1px solid rgba(255,255,255,0.07); padding: 0.8rem 1rem; gap: 0.5rem; }
+    .chatbot__input-area input { flex: 1; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 6px; color: var(--white); font-family: var(--font-body); font-size: 0.85rem; padding: 0.5rem 0.8rem; outline: none; }
+    .chatbot__input-area input::placeholder { color: rgba(255,255,255,0.35); }
+    .chatbot__input-area button { background: var(--accent); border: none; border-radius: 6px; color: var(--deep); font-weight: 700; font-size: 0.85rem; padding: 0.5rem 1rem; cursor: pointer; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .nav__links, .header__cta { display: none; }
+      .nav-toggle { display: flex; }
+      .contact-page__inner { grid-template-columns: 1fr; gap: 3rem; }
+      .footer__top { grid-template-columns: 1fr 1fr; }
+      #chatbotBox { width: calc(100vw - 2rem); right: 1rem; }
+    }
+    @media (max-width: 600px) {
+      .form-row { grid-template-columns: 1fr; }
+      .footer__top { grid-template-columns: 1fr; }
+      .contact-form-card { padding: 2rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══ MOBILE NAV ══ -->
+<div id="mobileMenu">
+  <button class="mobile-close" id="mobileClose">✕</button>
+  <a href="index.html">Home</a>
+  <a href="index.html#services">Services</a>
+  <a href="index.html#about">About</a>
+  <a href="index.html#areas">Areas</a>
+  <a href="index.html#testimonials">Reviews</a>
+  <a href="contact.html" style="color:var(--accent)">Contact</a>
+</div>
+
+<!-- ══ HEADER ══ -->
+<header class="header">
+  <div class="header__inner">
+    <a href="index.html" class="header__logo">
+      <div class="header__logo-icon">🏊</div>
+      Pool Care Specialist
+    </a>
+    <ul class="nav__links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#services">Services</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#areas">Areas</a></li>
+      <li><a href="index.html#testimonials">Reviews</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+    <a href="tel:5147810556" class="header__cta">📞 (514) 781-0556</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ══ PAGE HERO ══ -->
+<div class="page-hero">
+  <p class="page-hero__eyebrow">Get In Touch</p>
+  <h1>Book a <span>free estimate</span><br>for your pool</h1>
+  <p>We respond same day. No commitment — just an honest quote tailored to your pool and budget.</p>
+</div>
+
+<!-- ══ CONTACT MAIN ══ -->
+<section class="contact-page">
+  <div class="container">
+    <div class="contact-page__inner">
+
+      <!-- LEFT: Info -->
+      <div>
+        <div class="response-badge">● We typically respond within 2 hours</div>
+
+        <h2 class="contact-info__heading">Ready to help with your pool</h2>
+        <p class="contact-info__sub">Fill out the form and we'll get back to you with a free, no-obligation estimate. Prefer to call? Reach us directly at (514) 781-0556.</p>
+
+        <div class="contact-details">
+          <div class="contact-detail">
+            <div class="contact-detail__icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.5 19.79 19.79 0 01.22 5.72 2 2 0 012.23 3.6h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 11.1a16 16 0 006 6l1.86-1.86a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            </div>
+            <div>
+              <strong><a href="tel:5147810556">(514) 781-0556</a></strong>
+              <span>Call us Mon–Fri · 8am – 5pm</span>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-detail__icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div>
+              <strong>17575 Boul Gouin O</strong>
+              <span>Pierrefonds-Roxboro, QC H9J 1B1</span>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-detail__icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div>
+              <strong>Mon–Fri · 8am – 5pm</strong>
+              <span>Emergency calls available</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="services-list">
+          <p class="services-list__label">Services we offer</p>
+          <div class="service-pill">Pool Opening & Closing</div>
+          <div class="service-pill">Weekly & Bi-weekly Cleaning</div>
+          <div class="service-pill">Chemical Balancing</div>
+          <div class="service-pill">Green Pool Recovery</div>
+          <div class="service-pill">Equipment Inspection & Repair</div>
+          <div class="service-pill">Seasonal Maintenance Plans</div>
+        </div>
+      </div>
+
+      <!-- RIGHT: Form -->
+      <div class="contact-form-card">
+        <h2>Book a Free Estimate</h2>
+        <p>Fill in your details below and we'll be in touch same day.</p>
+
+        <form id="contactForm" action="https://formspree.io/f/YOURFORMID" method="POST">
+          <div class="form-row">
+            <div class="form-group">
+              <label>First Name</label>
+              <input type="text" name="first_name" placeholder="John" required />
+            </div>
+            <div class="form-group">
+              <label>Last Name</label>
+              <input type="text" name="last_name" placeholder="Smith" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Phone Number</label>
+            <input type="tel" name="phone" placeholder="(514) 000-0000" required />
+          </div>
+          <div class="form-group">
+            <label>Email Address</label>
+            <input type="email" name="email" placeholder="you@email.com" />
+          </div>
+          <div class="form-group">
+            <label>Service Needed</label>
+            <select name="service" required>
+              <option value="">Select a service...</option>
+              <option>Pool Opening</option>
+              <option>Pool Closing</option>
+              <option>Weekly / Bi-weekly Cleaning</option>
+              <option>Chemical Balancing</option>
+              <option>Green Pool Recovery</option>
+              <option>Equipment Inspection</option>
+              <option>Other / Not Sure</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>City / Neighbourhood</label>
+            <input type="text" name="city" placeholder="e.g. Pierrefonds, Kirkland, DDO..." />
+          </div>
+          <div class="form-group">
+            <label>Tell Us About Your Pool <span style="color:rgba(255,255,255,0.3);font-weight:400;text-transform:none;letter-spacing:0">(optional)</span></label>
+            <textarea name="message" placeholder="Pool size, in-ground or above-ground, last service date, any concerns..."></textarea>
+          </div>
+          <button type="submit" class="form-submit">Send My Request →</button>
+        </form>
+
+        <div id="formSuccess">
+          <div class="success-icon">✅</div>
+          <h3>We've got your request!</h3>
+          <p>Thank you — we'll reach out within a few hours with your free estimate. In a hurry? Call us directly at <a href="tel:5147810556" style="color:var(--accent)">(514) 781-0556</a>.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer class="footer">
+  <div class="footer__top container">
+    <div class="footer__brand">
+      <div class="footer__logo-name">Pool Care <span>Specialist</span></div>
+      <p>Keeping Montreal pools crystal clear since 2010. Professional, reliable, and always on time — summer after summer.</p>
+    </div>
+    <div class="footer__links">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="index.html#services">Pool Opening</a></li>
+        <li><a href="index.html#services">Pool Closing</a></li>
+        <li><a href="index.html#services">Regular Cleaning</a></li>
+        <li><a href="index.html#services">Chemical Balancing</a></li>
+        <li><a href="index.html#services">Green Pool Recovery</a></li>
+      </ul>
+    </div>
+    <div class="footer__links">
+      <h4>Service Areas</h4>
+      <ul>
+        <li><a href="index.html#areas">West Island</a></li>
+        <li><a href="index.html#areas">Pierrefonds · DDO</a></li>
+        <li><a href="index.html#areas">Kirkland · Beaconsfield</a></li>
+        <li><a href="index.html#areas">Montreal</a></li>
+        <li><a href="index.html#areas">Laval & Surroundings</a></li>
+      </ul>
+    </div>
+    <div class="footer__contact">
+      <h4>Contact</h4>
+      <p><a href="tel:5147810556">(514) 781-0556</a></p>
+      <p>17575 Boul Gouin O<br>Pierrefonds-Roxboro, QC H9J 1B1</p>
+      <p style="margin-top:0.5rem">Mon–Fri · 8am – 5pm</p>
+    </div>
+  </div>
+  <div class="footer__bottom container">
+    <p>© 2026 Pool Care Specialist. All rights reserved.</p>
+    <p style="color:rgba(255,255,255,0.22);font-size:0.78rem">Built by Harit AI Agency</p>
+  </div>
+</footer>
+
+<!-- ══ CHATBOT ══ -->
+<button id="chatbotToggle" aria-label="Open chat">💬</button>
+<div id="chatbotBox">
+  <div class="chatbot__header">
+    <div class="chatbot__avatar">🏊</div>
+    <div>
+      <div style="font-size:0.95rem">Pool Care Assistant</div>
+      <div style="font-size:0.75rem;font-weight:400;opacity:0.85">Usually replies in minutes</div>
+    </div>
+  </div>
+  <div class="chatbot__messages" id="chatMessages">
+    <div class="msg msg--bot">
+      <div class="msg__bubble">Hi! 👋 Looking to book a service? Fill out the form above or call us at (514) 781-0556 — we respond same day!</div>
+    </div>
+  </div>
+  <div class="chatbot__input-area">
+    <input type="text" id="chatInput" placeholder="Ask us anything..." />
+    <button id="chatSend">Send</button>
+  </div>
+</div>
+
+<script>
+  document.getElementById('navToggle').addEventListener('click', () =>
+    document.getElementById('mobileMenu').classList.add('open'));
+  document.getElementById('mobileClose').addEventListener('click', () =>
+    document.getElementById('mobileMenu').classList.remove('open'));
+  document.querySelectorAll('#mobileMenu a').forEach(a =>
+    a.addEventListener('click', () => document.getElementById('mobileMenu').classList.remove('open')));
+
+  // Chatbot
+  const chatbotToggle = document.getElementById('chatbotToggle');
+  const chatbotBox = document.getElementById('chatbotBox');
+  const chatMessages = document.getElementById('chatMessages');
+  const chatInput = document.getElementById('chatInput');
+  const chatSend = document.getElementById('chatSend');
+  chatbotToggle.addEventListener('click', () => chatbotBox.classList.toggle('open'));
+  function addMsg(text, type) {
+    const wrap = document.createElement('div');
+    wrap.className = `msg msg--${type}`;
+    const bubble = document.createElement('div');
+    bubble.className = 'msg__bubble';
+    bubble.textContent = text;
+    wrap.appendChild(bubble);
+    chatMessages.appendChild(wrap);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+  }
+  function sendMsg() {
+    const val = chatInput.value.trim();
+    if (!val) return;
+    addMsg(val, 'user');
+    chatInput.value = '';
+    setTimeout(() => addMsg("Thanks! Please fill out the form above or call (514) 781-0556 for the fastest response. We're here to help! 🏊", 'bot'), 700);
+  }
+  chatSend.addEventListener('click', sendMsg);
+  chatInput.addEventListener('keypress', e => { if (e.key === 'Enter') sendMsg(); });
+
+  // Form
+  const contactForm = document.getElementById('contactForm');
+  if (contactForm) {
+    contactForm.addEventListener('submit', async e => {
+      e.preventDefault();
+      try {
+        const res = await fetch(contactForm.action, {
+          method: 'POST',
+          body: new FormData(contactForm),
+          headers: { Accept: 'application/json' }
+        });
+        if (res.ok) {
+          contactForm.style.display = 'none';
+          document.getElementById('formSuccess').style.display = 'block';
+        }
+      } catch (_) {}
+    });
+  }
+</script>
+</body>
+</html>

@@ -156,7 +156,7 @@
     .hero__content {
       position: relative; z-index: 2;
       max-width: 1200px; margin: 0 auto;
-      padding: 0 4rem; padding-top: 10rem;
+      padding: 0 4rem; padding-top: 10rem; padding-bottom: 140px;
     }
     .hero__badge {
       display: inline-flex; align-items: center; gap: 0.5rem;
@@ -703,7 +703,7 @@
       .nav { padding: 1.5rem 2rem; }
       .nav__links, .nav__cta { display: none; }
       .nav-toggle { display: flex; }
-      .hero__content { padding: 0 2rem; padding-top: 8rem; }
+      .hero__content { padding: 0 2rem; padding-top: 8rem; padding-bottom: 2rem; }
       .hero__stats { position: static; }
       .about__inner { grid-template-columns: 1fr; gap: 3rem; }
       .contact__inner { grid-template-columns: 1fr; }
@@ -734,7 +734,7 @@
   <a href="#about">About</a>
   <a href="#areas">Service Areas</a>
   <a href="#testimonials">Reviews</a>
-  <a href="#contact">Contact</a>
+  <a href="contact.html">Contact</a>
   <a href="tel:5147810556" style="color:var(--accent)">(514) 781-0556</a>
 </div>
 
@@ -763,8 +763,9 @@
       <li><a href="#about">About</a></li>
       <li><a href="#areas">Areas</a></li>
       <li><a href="#testimonials">Reviews</a></li>
+      <li><a href="contact.html">Contact</a></li>
     </ul>
-    <a href="#contact" class="nav__cta">Book a Service</a>
+    <a href="contact.html" class="nav__cta">Book a Service</a>
     <button class="nav-toggle" id="navToggle" aria-label="Open menu">
       <span></span><span></span><span></span>
     </button>
@@ -784,7 +785,7 @@
     </p>
 
     <div class="hero__actions">
-      <a href="#contact" class="btn-primary">Book a Service →</a>
+      <a href="contact.html" class="btn-primary">Book a Service →</a>
       <a href="tel:5147810556" class="btn-ghost">📞 (514) 781-0556</a>
     </div>
   </div>
@@ -813,7 +814,7 @@
 <!-- ══ SEASONAL BANNER ══ -->
 <div class="seasonal-banner">
   ☀️ Summer is coming — Book your pool opening now before spots fill up!
-  <a href="#contact">Reserve your date →</a>
+  <a href="contact.html">Reserve your date →</a>
 </div>
 
 <!-- ══ TRUST BAR ══ -->
@@ -855,37 +856,37 @@
         <div class="service-card__icon">🌊</div>
         <h3>Pool Opening</h3>
         <p>Complete spring opening — cover removal, equipment startup, water testing, and chemical balancing to get your pool swim-ready fast.</p>
-        <a href="#contact" class="service-link">Book Now</a>
+        <a href="contact.html" class="service-link">Book Now</a>
       </div>
       <div class="service-card">
         <div class="service-card__icon">❄️</div>
         <h3>Pool Closing</h3>
         <p>Professional winterization including equipment shutdown, antifreeze treatment, and secure cover installation to protect your pool all winter.</p>
-        <a href="#contact" class="service-link">Book Now</a>
+        <a href="contact.html" class="service-link">Book Now</a>
       </div>
       <div class="service-card">
         <div class="service-card__icon">🧹</div>
         <h3>Regular Cleaning</h3>
         <p>Weekly or bi-weekly cleaning packages — vacuuming, brushing, skimming, and filter checks to keep your water pristine all season.</p>
-        <a href="#contact" class="service-link">Book Now</a>
+        <a href="contact.html" class="service-link">Book Now</a>
       </div>
       <div class="service-card">
         <div class="service-card__icon">🧪</div>
         <h3>Chemical Balancing</h3>
         <p>Precise pH, chlorine, alkalinity, and hardness testing with professional-grade treatment for safe, comfortable swimming water.</p>
-        <a href="#contact" class="service-link">Book Now</a>
+        <a href="contact.html" class="service-link">Book Now</a>
       </div>
       <div class="service-card">
         <div class="service-card__icon">🔧</div>
         <h3>Equipment Inspection</h3>
         <p>Full inspection of pumps, filters, heaters, and plumbing. Catch issues early before they become expensive repairs.</p>
-        <a href="#contact" class="service-link">Book Now</a>
+        <a href="contact.html" class="service-link">Book Now</a>
       </div>
       <div class="service-card">
         <div class="service-card__icon">💚</div>
         <h3>Green Pool Recovery</h3>
         <p>Pool turned green? We'll shock, treat, and restore it to crystal clear condition — usually within 24–48 hours. Emergency calls welcome.</p>
-        <a href="#contact" class="service-link">Book Now</a>
+        <a href="contact.html" class="service-link">Book Now</a>
       </div>
     </div>
   </div>
@@ -1184,89 +1185,15 @@
   </div>
 </section>
 
-<!-- ══ CONTACT ══ -->
-<section class="section section--dark" id="contact">
+<!-- ══ CTA BANNER ══ -->
+<section style="background:linear-gradient(135deg,#0d2137 0%,#0f3460 100%);padding:6rem 0;text-align:center;border-top:1px solid rgba(0,180,216,0.12)">
   <div class="container">
-    <div class="contact__inner">
-      <div class="contact__info">
-        <p class="section__eyebrow">Get In Touch</p>
-        <h2>Ready for a <span>crystal clear</span> pool?</h2>
-        <p>Fill out the form or give us a call. We respond the same day and provide a free estimate tailored to your pool.</p>
-        <div class="contact__details">
-          <div class="contact__detail">
-            <div class="contact__detail-icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.5 19.79 19.79 0 01.22 5.72 2 2 0 012.23 3.6h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 11.1a16 16 0 006 6l1.86-1.86a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-            </div>
-            <div>
-              <strong>(514) 781-0556</strong>
-              <span>Mon–Fri · 8am – 5pm</span>
-            </div>
-          </div>
-          <div class="contact__detail">
-            <div class="contact__detail-icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            </div>
-            <div>
-              <strong>17575 Boul Gouin O</strong>
-              <span>Pierrefonds-Roxboro, QC H9J 1B1</span>
-            </div>
-          </div>
-          <div class="contact__detail">
-            <div class="contact__detail-icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            </div>
-            <div>
-              <strong>Mon–Fri · 8am – 5pm</strong>
-              <span>Emergency calls available</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="contact__form">
-        <h3>Book a Free Estimate</h3>
-        <form id="contactForm" action="https://formspree.io/f/YOURFORMID" method="POST">
-          <div class="form-row">
-            <div class="form-group">
-              <label>First Name</label>
-              <input type="text" name="first_name" placeholder="John" required />
-            </div>
-            <div class="form-group">
-              <label>Last Name</label>
-              <input type="text" name="last_name" placeholder="Smith" required />
-            </div>
-          </div>
-          <div class="form-group">
-            <label>Phone</label>
-            <input type="tel" name="phone" placeholder="(514) 000-0000" required />
-          </div>
-          <div class="form-group">
-            <label>Email</label>
-            <input type="email" name="email" placeholder="you@email.com" />
-          </div>
-          <div class="form-group">
-            <label>Service Needed</label>
-            <select name="service" required>
-              <option value="">Select a service...</option>
-              <option>Pool Opening</option>
-              <option>Pool Closing</option>
-              <option>Weekly / Bi-weekly Cleaning</option>
-              <option>Chemical Balancing</option>
-              <option>Green Pool Recovery</option>
-              <option>Equipment Inspection</option>
-              <option>Other</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label>Message (optional)</label>
-            <textarea name="message" placeholder="Tell us about your pool — size, type, any concerns..."></textarea>
-          </div>
-          <button type="submit" class="form-submit">Send My Request →</button>
-        </form>
-        <div id="formSuccess">
-          ✅ Thank you! We'll be in touch within a few hours with your free estimate.
-        </div>
-      </div>
+    <p class="section__eyebrow">Ready to Get Started?</p>
+    <h2 class="section__title" style="margin-bottom:1rem">Get your free pool care estimate today.</h2>
+    <p style="color:rgba(255,255,255,0.6);max-width:480px;margin:0 auto 2.5rem;line-height:1.75">We respond the same day. No commitment, no pressure — just an honest quote for your pool.</p>
+    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+      <a href="contact.html" class="btn-primary" style="font-size:1rem;padding:1rem 2.5rem">Book a Free Estimate →</a>
+      <a href="tel:5147810556" class="btn-ghost" style="font-size:1rem;padding:1rem 2.5rem">📞 (514) 781-0556</a>
     </div>
   </div>
 </section>
@@ -1303,7 +1230,7 @@
       <p><a href="tel:5147810556">(514) 781-0556</a></p>
       <p>17575 Boul Gouin O<br>Pierrefonds-Roxboro, QC H9J 1B1</p>
       <p style="margin-top:0.5rem">Mon–Fri · 8am – 5pm</p>
-      <a href="#contact" class="btn-primary" style="display:inline-flex;margin-top:1.2rem;font-size:0.85rem;padding:0.65rem 1.4rem">Book a Service</a>
+      <a href="contact.html" class="btn-primary" style="display:inline-flex;margin-top:1.2rem;font-size:0.85rem;padding:0.65rem 1.4rem">Book a Service</a>
     </div>
   </div>
   <div class="footer__bottom container">
